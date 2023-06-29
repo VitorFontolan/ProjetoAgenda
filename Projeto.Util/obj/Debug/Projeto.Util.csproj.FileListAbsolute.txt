@@ -1,0 +1,6 @@
+C:\Users\15756170723\source\repos\ProjetoAgenda\Projeto.Util\bin\Debug\Projeto.Util.dll
+C:\Users\15756170723\source\repos\ProjetoAgenda\Projeto.Util\bin\Debug\Projeto.Util.pdb
+C:\Users\15756170723\source\repos\ProjetoAgenda\Projeto.Util\obj\Debug\Projeto.Util.csproj.AssemblyReference.cache
+C:\Users\15756170723\source\repos\ProjetoAgenda\Projeto.Util\obj\Debug\Projeto.Util.csproj.CoreCompileInputs.cache
+C:\Users\15756170723\source\repos\ProjetoAgenda\Projeto.Util\obj\Debug\Projeto.Util.dll
+C:\Users\15756170723\source\repos\ProjetoAgenda\Projeto.Util\obj\Debug\Projeto.Util.pdb
