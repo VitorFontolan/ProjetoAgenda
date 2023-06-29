@@ -1,2 +1,2 @@
 # ProjetoAgenda
-Projeto de uma Agenda de Tarefas
+Agenda de Tarefas
