@@ -1,0 +1,41 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model ProjetoAgenda.Models.UsuarioModelLogin
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <h3>Login de Usuários</h3>
+    @Html.ActionLink("Criar conta de Usuario", "Cadastro")
+    <hr />
+
+    <!--Formulario para login de usuarios-->
+    @using (Html.BeginForm("AutenticarUsuario", "Usuario", FormMethod.Post)) {
+        @Html.LabelFor(u => u.Login) <br />
+        @Html.TextBoxFor(u => u.Login) <br />
+        @Html.ValidationMessageFor(u => u.Login) <br />
+        <br /><br />
+
+        @Html.LabelFor(u => u.Senha) <br />
+        @Html.TextBoxFor(u => u.Senha) <br />
+        @Html.ValidationMessageFor(u => u.Senha) <br />
+        <br /><br />
+
+        <input type="submit" value="Acessar Sistema" />
+
+        <p>
+            @ViewBag.Mensagem
+        </p>
+    }
+
+    <div>
+    </div>
+</body>
+</html>

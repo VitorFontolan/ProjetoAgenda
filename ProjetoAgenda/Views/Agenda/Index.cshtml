@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Bem vindo à Agenda de Tarefas</h3>
+    @Html.ActionLink("Cadastrar Tarefa", "Cadastro") 
+    <br/><br/>
+    @Html.ActionLink("Consultar Tarefa", "Consulta")
+    <hr />
+    @Html.Partial("_dadosUsuario")
+    <div>
+    </div>
+</body>
+</html>

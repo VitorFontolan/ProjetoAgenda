@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model ProjetoAgenda.Models.UsuarioModelCadastro
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro</title>
+</head>
+<body>
+
+    <h3>Cadastro de Usuários</h3>
+    @Html.ActionLink("Autenticar Usuario", "Login")
+    <hr />
+
+    <!--Formulario para cadastro de usuarios-->
+    @using (Html.BeginForm("CadastrarUsuario", "Usuario", FormMethod.Post)) {
+
+        <div>
+            @Html.ValidationSummary()
+        </div>
+
+        @Html.LabelFor(u => u.Nome) <br />
+        @Html.TextBoxFor(u => u.Nome)
+        <br /><br />
+
+        @Html.LabelFor(u => u.Login) <br />
+        @Html.TextBoxFor(u => u.Login)
+        <br /><br />
+
+        @Html.LabelFor(u => u.Senha) <br />
+        @Html.PasswordFor(u => u.Senha)
+        <br /><br />
+
+        @Html.LabelFor(u => u.SenhaConfirm) <br />
+        @Html.PasswordFor(u => u.SenhaConfirm)
+        <br /><br />
+
+        <input type="submit" value="Cadastrar Usuario" />
+
+        <p>
+            @ViewBag.Mensagem
+        </p>
+    }
+
+    <div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@using Projeto.Data.Entities
+<div>
+    @{
+        //resgatando o usuario da sessão...
+        Usuario u = (Usuario)Session["usuariologado"];
+
+        <label>Nome do Usuario: </label> @u.Nome
+        <br />
+        <label>Login de Acesso: </label> @u.Login
+        <br />
+        <label>Conta criada em: </label> @u.DataCadastro
+        <br /><br />
+
+        @Html.ActionLink("Sair do Sistema", "Logout", "Usuario")
+    }
+</div>

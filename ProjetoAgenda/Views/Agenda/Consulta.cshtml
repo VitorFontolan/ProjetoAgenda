@@ -1,0 +1,78 @@
+﻿@model ProjetoAgenda.Models.AgendaModelConsulta
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Consulta de Tarefas</h3>
+
+@Html.ActionLink("Voltar", "Index")
+<hr />
+<div class="row">
+    <div class="col-md-3">
+
+        @using (Html.BeginForm("ConsultarTarefas", "Agenda", FormMethod.Post)) {
+
+            <div style="color: red;">
+                @Html.ValidationSummary()
+            </div>
+
+            @Html.LabelFor(model => model.DataIni)
+            @Html.TextBoxFor(model => model.DataIni, new { @class = "form-control", @type = "datetime-local" })
+            <br />
+
+            @Html.LabelFor(model => model.DataFim)
+            @Html.TextBoxFor(model => model.DataFim, new { @class = "form-control", @type = "datetime-local" })
+            <br />
+
+            <input type="submit" value="Realizar Pesquisa" class="btn btn-primary btn-block" />
+            <hr />
+
+            @ViewBag.Mensagem
+        }
+    </div>
+    <div class="col-md-9">
+        @if(Model != null && Model.ListagemTarefas != null) {
+                if(Model.ListagemTarefas.Count > 0) {
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Tarefa</th>
+                                <th>Categoria</th>
+                                <th>Criado por</th>
+                                <th>Descrição</th>
+                                <th>Inicio</th>
+                                <th>Termino</th>
+                                <th>Operações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var t in Model.ListagemTarefas) {
+                                <tr>
+                                    <td> @t.Titulo </td>
+                                    <td> @t.Categoria </td>
+                                    <td> @t.Usuario  </td>
+                                    <td> @t.Descricao </td>
+                                    <td> @t.DataHoraInicio </td>
+                                    <td> @t.DataHoraFim </td>
+                                    <td>
+                                        @Html.ActionLink("Excluir", "ExcluirTarefa",
+                                            new { id = t.Codigo },
+                                            new {@class = "btn btn-danger btn-sm"})
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="7"> Quantidade: @Model.ListagemTarefas.Count </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                }
+                else {
+                    <h4> Nenhuma tarefa encontrada</h4>
+                }
+            }
+    </div>
+</div>
